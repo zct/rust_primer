@@ -1,6 +1,9 @@
 
 fn main() {
     min_lifetime();
+    let s = String::from("hello world");
+    let x = first_woard(&s);
+    println!("{}",x);
 }
 
 fn min_lifetime() {
@@ -17,4 +20,14 @@ fn longest<'a>(x :&'a str, y :&'a str) -> &'a str { //str是什么类型，跟st
     } else {
         y
     }
+}
+
+fn first_woard(x :& String) ->& str{
+    let x_bytes = x.as_bytes();
+    for (i, &item) in x_bytes.iter().enumerate(){
+        if item == b' '{
+            return &x[0..i];
+        }
+    }
+     &x[..]
 }

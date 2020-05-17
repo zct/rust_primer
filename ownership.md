@@ -5,6 +5,8 @@
 * There can only be one owner at a time.
 * When the owner goes out of scope, the value will be dropped.
 
+有ownership的数据类型是哪些，没有ownership的数据类型是哪些？（引用，slice）
+
 引用不会导致ownership的转移;
 
 有refrence就需要life time annotation？ 是的
@@ -15,6 +17,6 @@
 2. The second rule is if there is exactly one input lifetime parameter, that lifetime is assigned to all output lifetime parameters:
 3. The third rule is if there are multiple input lifetime parameters, but one of them is &self or &mut self because this is a method, the lifetime of self is assigned to all output lifetime parameters.
    
-   
+
 
 
